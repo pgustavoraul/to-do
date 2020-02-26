@@ -1,17 +1,15 @@
-var url = window.location.href;
-var swLocation = '/to-do/sw.js';
-
-if(navigator.serviceWorker){
-    if(url.includes('localhost')){
-        swLocation = ('/sw.js');
-    }
-    navigator.serviceWorker.register( swLocation );
-}
-
 (function() {
-
-    
     'use strict';
+
+    var url = window.location.href;
+    var swLocation = '/to-do/sw.js';
+
+    if(navigator.serviceWorker){
+        if(url.includes('localhost')){
+            swLocation = ('/sw.js');
+        }
+        navigator.serviceWorker.register( swLocation );
+    }
   
     var ENTER_KEY = 13;
     var newTodoDom = document.getElementById('new-todo');
